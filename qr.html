@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>QR Codes das cabines — Guardiãs</title>
+  <link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+  <header class="barra">
+    <h1>QR Codes das cabines</h1>
+    <div class="acoes">
+      <a class="btn btn-claro" href="/painel">Voltar ao painel</a>
+    </div>
+  </header>
+  <main class="painel">
+    <div class="config nao-imprimir">
+      <label>Quantidade de cabines
+        <input id="qtd" type="number" min="1" max="60" value="6">
+      </label>
+      <label>Começar na cabine
+        <input id="inicio" type="number" min="1" max="999" value="1">
+      </label>
+      <label>Endereço do site
+        <input id="base" class="largo" type="url" inputmode="url" spellcheck="false">
+      </label>
+      <button class="btn btn-primario" type="button" id="btn-gerar">Gerar QR Codes</button>
+      <button class="btn btn-claro" type="button" id="btn-imprimir">Imprimir</button>
+    </div>
+    <p class="erro" id="erro" role="alert"></p>
+    <div class="folha" id="folha"></div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="/qr.js"></script>
+</body>
+</html>

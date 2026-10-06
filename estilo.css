@@ -1,0 +1,77 @@
+:root{
+  --ameixa:#2B1238; --ameixa-2:#43205A; --ameixa-3:#5A2D78;
+  --lilas:#F7F3FA; --lilas-2:#EBE2F2; --borda:#D9CBE5;
+  --violeta:#6B2C91; --ambar:#F2A541; --verde:#1E8A6B; --vermelho:#C0392B;
+  --texto:#2B1238; --suave:#5E4A6B;
+  --fonte:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--fonte);font-size:1.0625rem;line-height:1.5;background:var(--lilas);color:var(--texto);
+  padding:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0)}
+h1,h2,h3,p{margin:0}
+button,input{font:inherit}
+:focus-visible{outline:3px solid var(--ambar);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+
+.btn{display:inline-block;border:2px solid transparent;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none}
+.btn-primario{background:var(--violeta);color:#fff}
+.btn-primario:hover{background:#54217A}
+.btn-claro{background:#fff;color:var(--ameixa);border-color:var(--borda)}
+.btn-claro:hover{background:var(--lilas-2)}
+.erro{color:var(--vermelho);font-weight:600}
+
+/* ===== Painel da equipe ===== */
+.barra{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:var(--ameixa);color:#fff;padding:12px 16px}
+.barra h1{font-size:1.15rem}
+.barra .acoes{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.conexao{font-size:.9rem;color:#CDB8DD;display:inline-flex;align-items:center;gap:6px}
+.conexao::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--ambar)}
+.conexao.on::before{background:#4CD6A6}
+.conexao.off::before{background:#FF7A6B}
+.barra .btn{padding:8px 16px;font-size:.95rem}
+.barra .btn-claro{background:transparent;color:#fff;border-color:var(--ameixa-3)}
+
+.painel{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+.login{max-width:380px;margin:12vh auto 0;padding:0 16px;display:grid;gap:12px}
+.login h1{font-size:1.5rem}
+.login input{padding:14px;border:2px solid var(--borda);border-radius:12px;background:#fff}
+.login input:focus{border-color:var(--violeta);outline:none;box-shadow:0 0 0 3px rgba(107,44,145,.2)}
+
+.titulo-lista{font-size:1.05rem;margin:22px 0 10px;color:var(--suave)}
+.vazio{padding:22px;border:2px dashed var(--borda);border-radius:14px;color:var(--suave)}
+.lista{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.alerta{background:#fff;border:2px solid var(--borda);border-left-width:10px;border-radius:14px;padding:16px;display:grid;gap:10px}
+.alerta.novo{border-color:var(--ambar);border-left-color:var(--vermelho);animation:pulsa 1.4s ease-in-out infinite}
+.alerta.atendendo{border-left-color:var(--ambar)}
+.alerta.resolvido{opacity:.65;border-left-color:var(--verde)}
+@keyframes pulsa{50%{box-shadow:0 0 0 6px rgba(242,165,65,.35)}}
+.alerta .topo{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.alerta .cabine{font-size:1.5rem;font-weight:800}
+.alerta .tempo{color:var(--suave);font-size:.95rem}
+.alerta .motivo{font-size:1.1rem;font-weight:600}
+.alerta .botoes{display:flex;gap:8px;flex-wrap:wrap}
+.etiqueta{display:inline-block;border-radius:999px;padding:2px 12px;font-size:.85rem;font-weight:700;background:var(--lilas-2)}
+.alerta.novo .etiqueta{background:var(--vermelho);color:#fff}
+.alerta.atendendo .etiqueta{background:var(--ambar)}
+.alerta.resolvido .etiqueta{background:#CFEFE4}
+
+/* ===== Gerador de QR Codes ===== */
+.config{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end;margin:16px 0 24px}
+.config label{display:grid;gap:4px;font-weight:600}
+.config input{padding:10px 12px;border:2px solid var(--borda);border-radius:10px;width:140px;background:#fff}
+.config input.largo{width:300px;max-width:100%}
+.folha{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.adesivo{background:#fff;border:2px solid var(--ameixa);border-radius:14px;padding:16px;display:grid;gap:8px;justify-items:center;text-align:center;break-inside:avoid}
+.adesivo .qr{width:160px;height:160px;display:grid;place-items:center}
+.adesivo strong{font-size:1.05rem}
+.adesivo span{font-size:.9rem;color:var(--suave)}
+@media print{
+  .barra,.config,.nao-imprimir{display:none!important}
+  body{background:#fff}
+  .painel{padding:0;max-width:none}
+  .folha{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}

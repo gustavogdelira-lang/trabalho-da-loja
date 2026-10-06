@@ -1,0 +1,9 @@
+# Copie estas variáveis para o painel da hospedagem (ou exporte no terminal).
+PAINEL_SENHA=troque-por-uma-senha-forte
+NOME_LOCAL=Nome do seu estabelecimento
+# Nome da loja de roupas que aparece no site (a fachada do atendimento)
+LOJA_NOME=Trama Moda
+# Opcional: URL de um webhook (Slack, Discord, Make, Zapier) para receber o alerta também por lá
+WEBHOOK_URL=
+# Opcional: segredo fixo para manter a equipe logada após reiniciar o servidor
+SEGREDO=

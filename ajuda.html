@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#F5F7F5">
+  <title>Trama Moda</title>
+  <link rel="stylesheet" href="/loja.css">
+</head>
+<body>
+  <div class="faixa">Frete grátis em compras acima de R$ 299 · Troca em até 30 dias</div>
+
+  <header class="topo">
+    <button class="icone menu-mobile" type="button" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <a class="logo" href="/" id="logo">Trama</a>
+    <nav aria-label="Categorias">
+      <ul>
+        <li><a href="#colecao" data-filtro="todos">Novidades</a></li>
+        <li><a href="#colecao" data-filtro="vestidos">Vestidos</a></li>
+        <li><a href="#colecao" data-filtro="blusas">Blusas</a></li>
+        <li><a href="#colecao" data-filtro="calcas">Calças e saias</a></li>
+        <li><a href="#colecao" data-filtro="casacos">Casacos</a></li>
+      </ul>
+    </nav>
+    <button class="icone sacola" type="button" aria-label="Sacola de compras">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Zm4 0a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span class="contador" id="contador" hidden>0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="capa" aria-labelledby="capa-titulo">
+      <div class="capa-texto">
+        <h1 id="capa-titulo">Peças leves para os dias que começam cedo e terminam tarde.</h1>
+        <p>Linho, algodão e viscose em cortes que acompanham o corpo e a rotina. Nova coleção com tamanhos do 34 ao 54.</p>
+        <a class="botao" href="#colecao">Ver a coleção</a>
+      </div>
+      <div class="capa-arte" aria-hidden="true"></div>
+    </section>
+
+    <section class="secao" id="colecao" aria-labelledby="colecao-titulo">
+      <div class="secao-topo">
+        <h2 id="colecao-titulo">Coleção</h2>
+        <div class="filtros" role="group" aria-label="Filtrar por categoria">
+          <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Todas</button>
+          <button type="button" class="filtro" data-filtro="vestidos" aria-pressed="false">Vestidos</button>
+          <button type="button" class="filtro" data-filtro="blusas" aria-pressed="false">Blusas</button>
+          <button type="button" class="filtro" data-filtro="calcas" aria-pressed="false">Calças e saias</button>
+          <button type="button" class="filtro" data-filtro="casacos" aria-pressed="false">Casacos</button>
+        </div>
+      </div>
+      <ul class="grade" id="grade"></ul>
+    </section>
+
+    <section class="guia" aria-labelledby="guia-titulo">
+      <h2 id="guia-titulo">Não sabe seu tamanho?</h2>
+      <p>Use a tabela de medidas de cada peça ou fale com a nossa equipe pelo atendimento. Trocamos o tamanho sem custo na primeira troca.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div>
+      <strong>Trama Moda</strong>
+      <p>Moda feita para o dia a dia.</p>
+    </div>
+    <div>
+      <strong>Ajuda</strong>
+      <p>Trocas e devoluções</p>
+      <p>Prazos de entrega</p>
+      <p>Guia de medidas</p>
+    </div>
+    <div>
+      <strong>Pagamento</strong>
+      <p>Cartão em até 6x sem juros</p>
+      <p>Pix com 5% de desconto</p>
+    </div>
+  </footer>
+
+  <!-- Atendimento (conversa) -->
+  <button class="chat-botao" type="button" id="chat-botao" aria-expanded="false" aria-controls="chat" hidden>
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    Atendimento
+  </button>
+
+  <section class="chat" id="chat" role="dialog" aria-label="Atendimento ao cliente" hidden>
+    <header class="chat-topo">
+      <div>
+        <strong id="chat-nome">Atendimento Trama</strong>
+        <span>Respondemos na hora</span>
+      </div>
+      <button class="chat-fechar" type="button" id="chat-fechar" aria-label="Fechar atendimento">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </header>
+    <div class="chat-msgs" id="chat-msgs" role="log" aria-live="polite"></div>
+    <div class="chat-opcoes" id="chat-opcoes"></div>
+  </section>
+
+  <script src="/ajuda.js"></script>
+</body>
+</html>

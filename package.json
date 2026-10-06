@@ -1,0 +1,10 @@
+{
+  "name": "guardias-ponto-de-ajuda",
+  "version": "1.0.0",
+  "description": "Ponto de Ajuda via QR Code — Projeto Guardiãs",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "private": true
+}
